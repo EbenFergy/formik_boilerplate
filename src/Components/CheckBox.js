@@ -2,7 +2,7 @@ import React from "react";
 import { Field, ErrorMessage } from "formik";
 import { InputStyle, ErrorStyle } from "./FormStyle";
 
-const Radio = ({ label, name, options, ...rest }) => {
+const CheckBox = ({ label, options, name, ...rest }) => {
   return (
     <InputStyle>
       <label>{label}</label>
@@ -12,11 +12,11 @@ const Radio = ({ label, name, options, ...rest }) => {
             return (
               <div key={option.key}>
                 <input
-                  type="radio"
                   id={option.value}
-                  {...field}
+                  type="checkbox"
                   value={option.value}
-                  checked={field.value === option.value}
+                  checked={field.value.includes(option.value)}
+                  {...field}
                 />
                 <label htmlFor={option.value}>{option.key}</label>
               </div>
@@ -29,4 +29,4 @@ const Radio = ({ label, name, options, ...rest }) => {
   );
 };
 
-export default Radio;
+export default CheckBox;
