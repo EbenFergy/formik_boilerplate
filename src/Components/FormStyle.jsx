@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const FormCont = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  justify-content: center;
+  border: 2px solid #07a884;
+  padding: 2rem;
+`;
 export const InputStyle = styled.div`
   display: flex;
   flex-direction: column;
@@ -7,7 +15,8 @@ export const InputStyle = styled.div`
   margin-bottom: 1rem;
 
   input,
-  textarea {
+  textarea,
+  select {
     padding: 0.5rem 1rem;
     border: 1px solid #07a884;
     font-family: inherit;

@@ -1,6 +1,6 @@
 import React from "react";
 import { Field, ErrorMessage } from "formik";
-import { ErrorStyle, InputStyle } from "./Form/FormStyle";
+import { ErrorStyle, InputStyle } from "./FormStyle";
 
 const Input = ({ name, label, ...rest }) => {
   return (

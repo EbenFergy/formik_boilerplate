@@ -1,7 +1,7 @@
 import React from "react";
 import { useFormik } from "formik";
 import Button from "../Button";
-import { InputStyle as FormStyle } from "./FormStyle";
+import { InputStyle as FormStyle } from "../FormStyle";
 
 const Form = () => {
   const initialValues = {
