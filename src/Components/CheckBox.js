@@ -2,7 +2,7 @@ import React from "react";
 import { Field, ErrorMessage } from "formik";
 import { InputStyle, ErrorStyle } from "./FormStyle";
 
-const CheckBox = ({ label, options, name, ...rest }) => {
+const CheckBox = ({ label, name, options, ...rest }) => {
   return (
     <InputStyle>
       <label>{label}</label>
@@ -12,11 +12,11 @@ const CheckBox = ({ label, options, name, ...rest }) => {
             return (
               <div key={option.key}>
                 <input
-                  id={option.value}
                   type="checkbox"
+                  id={option.value}
+                  {...field}
                   value={option.value}
                   checked={field.value.includes(option.value)}
-                  {...field}
                 />
                 <label htmlFor={option.value}>{option.key}</label>
               </div>

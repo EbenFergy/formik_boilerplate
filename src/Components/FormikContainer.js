@@ -5,24 +5,6 @@ import FormikControl from "./FormikControl";
 import { Button, FormCont } from "./FormStyle";
 
 const FormikContainer = () => {
-  const initialValues = {
-    email: "",
-    description: "",
-    selectOption: "",
-    radioOption: "",
-    checkBoxOption: [],
-  };
-  const validationSchema = Yup.object({
-    email: Yup.string().required("Email required"),
-    description: Yup.string().required("Please type in a description"),
-    selectOption: Yup.string().required("Please select an option"),
-    radioOption: Yup.string().required("Please pick an option"),
-    checkBoxOption: Yup.array().required("Select one or more"),
-  });
-  const onSubmit = (values) => {
-    console.log("Form data", values);
-  };
-
   const selectOptions = [
     { key: "Select an option", value: "" },
     { key: "Boy", value: "boy" },
@@ -43,6 +25,27 @@ const FormikContainer = () => {
     { key: "Pear", value: "pear" },
     { key: "Apple", value: "apple" },
   ];
+
+  const initialValues = {
+    email: "",
+    description: "",
+    selectOption: "",
+    radioOption: "",
+    checkBoxOption: [],
+  };
+  const validationSchema = Yup.object({
+    email: Yup.string().required("Email required"),
+    description: Yup.string().required("Please type in a description"),
+    selectOption: Yup.string().required("Please select an option"),
+    radioOption: Yup.string().required("Please pick an option"),
+    checkBoxOption: Yup.array()
+      .min(1, "Select at least one option")
+      .required("Select at least one option"),
+  });
+  const onSubmit = (values) => {
+    console.log("Form data", values);
+  };
+
   return (
     <Formik
       initialValues={initialValues}
