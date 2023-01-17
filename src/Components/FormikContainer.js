@@ -32,6 +32,7 @@ const FormikContainer = () => {
     selectOption: "",
     radioOption: "",
     checkBoxOption: [],
+    dateOption: "",
   };
   const validationSchema = Yup.object({
     email: Yup.string().required("Email required"),
@@ -41,9 +42,19 @@ const FormikContainer = () => {
     checkBoxOption: Yup.array()
       .min(1, "Select at least one option")
       .required("Select at least one option"),
+    dateOption: Yup.date().required("Date is required"),
   });
   const onSubmit = (values) => {
+    // let firstDay = new Date(2023, 0, 1);
+    // let secondDay = new Date(2023, 0, 15);
     console.log("Form data", values);
+    // console.log("date type", typeof values.dateOption);
+
+    // checking how to use the new Date() constructor in Javascript
+    // if (values.dateOption < firstDay || values.dateOption > secondDay)
+    //   console.log("...not valid");
+    // if (values.dateOption < secondDay && values.dateOption > firstDay)
+    //   console.log("...valid");
   };
 
   return (
@@ -86,6 +97,12 @@ const FormikContainer = () => {
               name="checkBoxOption"
               label="Choose one or more"
               options={checkBoxOptions}
+            />
+
+            <FormikControl
+              control="date"
+              name="dateOption"
+              label="Pick a date"
             />
 
             <Button type="submit">Submit</Button>
