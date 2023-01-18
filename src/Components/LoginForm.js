@@ -36,13 +36,15 @@ const LoginForm = () => {
                 name="email"
                 label="Email"
                 type="email"
+                placeholder="email"
               />
               <FormikControl
                 control="input"
                 name="password"
                 label="Password"
-                type="password"
+                placeholder="password"
               />
+
               <Button type="submit">Submit</Button>
             </FormCont>
           </Form>

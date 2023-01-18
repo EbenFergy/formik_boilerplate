@@ -8,7 +8,30 @@ export const FormCont = styled.div`
   border: 2px solid #07a884;
   padding: 2rem;
   width: 50vw;
-  max-width: 20rem;
+  max-width: 18rem;
+
+  .passwordWrapper {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    input {
+      width: 100%;
+    }
+
+    .eyeWrapper {
+      position: absolute;
+      right: 0.5rem;
+      display: flex;
+      align-items: center;
+      /* border: 2px solid; */
+
+      svg {
+        width: 15px;
+      }
+    }
+  }
 `;
 export const InputStyle = styled.div`
   display: flex;
