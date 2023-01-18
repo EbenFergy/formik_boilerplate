@@ -7,6 +7,8 @@ export const FormCont = styled.div`
   justify-content: center;
   border: 2px solid #07a884;
   padding: 2rem;
+  width: 50vw;
+  max-width: 20rem;
 `;
 export const InputStyle = styled.div`
   display: flex;
