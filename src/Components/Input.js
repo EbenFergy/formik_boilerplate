@@ -4,13 +4,14 @@ import { ErrorStyle, InputStyle } from "./FormStyle";
 
 const Input = ({ name, label, ...rest }) => {
   const [passwordVisible, setPasswordVisible] = useState(false);
+  const { type } = rest;
 
   const eyeHandler = () => {
     setPasswordVisible(() => !passwordVisible);
   };
   return (
     <>
-      {name === "password" ? (
+      {type === "password" ? (
         <InputStyle>
           <label htmlFor={name}>{label}</label>
           <div className="passwordWrapper">

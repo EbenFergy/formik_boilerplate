@@ -1,11 +1,10 @@
 .App {
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
-
-.formCont {
+  padding: 2rem 1rem;
+  gap: 1rem;
+  /* width: 100vw;
+  height: 100vh; */
 }
